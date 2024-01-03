@@ -40,11 +40,10 @@ Before we dive into Platform IO, ensure you have the following ready:
 
 # 2. HELLO WORLD -  XIAO SAMD21
 
-[https://sigmdel.ca/michel/ha/xiao/seeeduino_xiao_platformio2_en.html](https://sigmdel.ca/michel/ha/xiao/seeeduino_xiao_platformio2_en.html)
+[Reference Tutorial](https://sigmdel.ca/michel/ha/xiao/seeeduino_xiao_platformio2_en.html)
 
-## PlatformIO Perquisites
+## PlatformIO Prerequisites
 
-![https://sigmdel.ca/michel/arrow-up.png](https://sigmdel.ca/michel/arrow-up.png)
 
 Adding the PlatformIO extension in the editor is quite simple, just follow the [installation instructions](https://docs.platformio.org/en/latest/integration/ide/vscode.html#installation). Once PlatformIO is added, it adds a toolbar to the status bar at the bottom of the editor.
 
