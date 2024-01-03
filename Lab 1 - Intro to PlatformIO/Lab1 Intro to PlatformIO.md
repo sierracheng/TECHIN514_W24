@@ -1,5 +1,7 @@
 # Lab 1 : Introduction to Platform IO with XIAO Seeeduino SAMD21
 
+**While the tutorial is specific to setting up the XIAO SAMD21, the setup for most other boards is similar.** Links will be in the README of this lab.
+
 # ****1. Introduction to Platform IO****
 
 ### **Before everything starts: why Platform IO?**
@@ -234,6 +236,8 @@ lib_deps =
 	adafruit/Adafruit GFX Library@^1.11.9
 	adafruit/Adafruit SSD1306@^2.5.9
 ```
+
+A bit more about SemVer: here is the [cheatsheet](https://devhints.io/semver)
 
 ## Importing and using the libraries
 
