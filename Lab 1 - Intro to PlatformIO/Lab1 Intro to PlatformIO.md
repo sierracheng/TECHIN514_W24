@@ -1,4 +1,4 @@
-# Lab 1 : Introduction to Platform IO with ESP32
+# Lab 1 : Introduction to Platform IO with XIAO Seeeduino SAMD21
 
 # ****1. Introduction to Platform IO****
 
