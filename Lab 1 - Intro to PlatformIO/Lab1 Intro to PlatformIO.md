@@ -2,6 +2,13 @@
 
 # ****1. Introduction to Platform IO****
 
+### **Before everything starts: why Platform IO?**
+
+* Wider range of microcontrollers and development boards than Arduino IDE.
+* More set of tools supporting Library Management, Continuous Integration, Unit Testing, and Debugging.
+* Compatible with other VSCode extensions (e.g. GitHub Copilot).
+  * We highly suggest you install GitHub Copilot extension on VSCode first before this lab. The instruction is here in the [appendix](#appendix:-github-copilot).
+
 ### **Lab Objectives**
 
 In this lab, students will:
@@ -16,34 +23,34 @@ Before we dive into Platform IO, ensure you have the following ready:
 
 - **Visual Studio Code (VSCode)** installed on your Windows, MacOS, or Linux computer.
 - **Your Wearable Device**: Make sure you have the wearable device you made last quarter. We'll be programming with it during this lab.
+- **USB-C cable**: Make sure you can connect your wearable device to your laptop
 
 ### **Installing Platform IO**
 
 - **Prerequisites**: Ensure Python is installed on your system.
 - **Installation Steps**:
-    1. Open VSCode, go to Extensions.
-    2. Search for "PlatformIO IDE".
-    3. Install the PlatformIO IDE extension.
-    
-    ![Untitled](images/Untitled.png)
-    
+
+  1. Open VSCode, go to Extensions.
+  2. Search for "PlatformIO IDE".
+  3. Install the PlatformIO IDE extension.
+
+  ![Untitled](images/Untitled.png)
 - We highly recommend referring to the [Platform IO documentation](https://docs.platformio.org/en/latest/integration/ide/vscode.html#quick-start) and [tutorials](https://docs.platformio.org/en/latest/tutorials/index.html#tutorials). These resources contain detailed tutorials and comprehensive documentation for most boards you will need to use
 
 ### **Configuring the Development Environment**
 
 - **Setting Up the IDE**: Once installed, open Platform IO from the VSCode sidebar. Initially, allow it to complete any additional installations or updates.
 - **Adding Extensions and Plugins**: Explore the Extensions marketplace in VSCode for relevant add-ons
-    - GitHub CoPilot (free for students on GitHub when registered with your UW ID)
-    - Git integration
-    - code linters
-    - Arduino specific extensions
+  - GitHub CoPilot (free for students on GitHub when registered with your UW ID)
+  - Git integration
+  - code linters
+  - Arduino specific extensions
 
 # 2. HELLO WORLD -  XIAO SAMD21
 
 [Reference Tutorial](https://sigmdel.ca/michel/ha/xiao/seeeduino_xiao_platformio2_en.html)
 
 ## PlatformIO Prerequisites
-
 
 Adding the PlatformIO extension in the editor is quite simple, just follow the [installation instructions](https://docs.platformio.org/en/latest/integration/ide/vscode.html#installation). Once PlatformIO is added, it adds a toolbar to the status bar at the bottom of the editor.
 
@@ -189,10 +196,10 @@ Now that our Hello World project is setup lets try to use external libraries in 
 
 Because the OLED display uses I2C communication protocol, wiring is very simple. You can use the following table as a reference.
 
-| Pin | SAMD21 |
-| --- | --- |
-| Vin | 3.3V |
-| GND | GND |
+| Pin | SAMD21  |
+| --- | ------- |
+| Vin | 3.3V    |
+| GND | GND     |
 | SCL | GPIO 22 |
 | SDA | GPIO 21 |
 
@@ -212,7 +219,7 @@ Now navigate to the **`Libraries`** section in **`PIO Home`** and type “Adafru
 
 You should be able to see the **`Adafruit GFX Library`** and the **`Adafruit SSD1306 Library`**
 
-Install both the libraries by adding them to our project 
+Install both the libraries by adding them to our project
 
 ![Untitled](images/Untitled%204.png)
 
@@ -276,6 +283,45 @@ void loop(){
 2. Install the necessary libraries and run the code using PlatformIO
 3. Upload the code to GitHub in your own repository and share the link
 4. Submit screenshots of the following:
-    1. Build Log
-    2. Serial Monitor Output
-    3. GitHub repository screenshot
+   1. Build Log
+   2. Serial Monitor Output
+   3. GitHub repository screenshot
+
+# Appendix: GitHub Copilot
+
+All students in UW can have an free, educational version of GitHub Copilot subscription. You can follow the instruction [here](https://docs.github.com/en/copilot/quickstart) if you want further details.
+
+Other references about setting up GitHub Copilot are here:
+
+* [Student Account Setup and Copilot](https://techcommunity.microsoft.com/t5/educator-developer-blog/step-by-step-setting-up-github-student-and-github-copilot-as-an/ba-p/3736279)
+* [Installing GitHub Copilot on VSCode](https://docs.github.com/en/copilot/using-github-copilot/getting-started-with-github-copilot?tool=vscode)
+
+Before get started, **make sure your GitHub account is linked with your UW email address. THIS IS IMPORTANT** to get the subscription free.
+
+## Setup GitHub Student Account
+
+1. Go to the [GitHub Student Developer Pack](https://education.github.com/pack) page, and click sign up for "Student Developer Pack"
+2. Click "Get School Benefits" under the Student box:
+   ![Untitled](images/github-student-pack.png)
+3. Submit your application with your information in UW, including your **email address (make sure it's linked with your GitHub account)**, school name, and sometimes your Husky Card. There might be more questions to be answered.
+   ![Untitled](images/github-education-discount.png)
+
+## Setup GitHub Copilot Education Subsription
+
+1. Go to the [GitHub Copilot](https://github.com/features/copilot/) webpage, and click "Get started with Copilot"
+   ![Untitled](images/github-copilot-page.png)
+2. Scroll down to *For Individuals*, and click "Start a free trial". Don't worry, this will not cost you any money.
+   ![Untitled](images/github-copilot-free-trial.png)
+3. If you already have a subsription of GitHub Copilot, it will automatically jump to your account's setting page under the Copilot tab. Activate the subscription if you can.
+   Otherwise, if you see this page, it means you are eligible for a free subscription of Copilot:
+   ![Untitled](images/github-copilot-free.png)
+
+   Proceed and then go to your[GitHub Copilot Setting page](https://github.com/settings/copilot) and activate your subscription.
+
+## Install GitHub Copilot on VSCode
+
+1. Go to the extension tab on VScode, searching for "GitHub Copilot", choosing the first one and clicking "install"
+   ![Untitled](images/github-copilot-install.png)
+2. Afterward, VSCode will automatically prompt an infobox and try authorizing the plugin with your GitHub account. If there is no pop-up window showing, check the notification icon on the bottom-right of your window.
+   ![Untitled](images/copilot-activate.webp)
+3. Enjoy!
