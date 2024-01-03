@@ -182,7 +182,7 @@ Given the [double duty performed by the USB port of the XIAO](https://sigmdel.c
 
 ![https://sigmdel.ca/michel/ha/xiao/img/platformio_hello_compile4.jpg](https://sigmdel.ca/michel/ha/xiao/img/platformio_hello_compile4.jpg)
 
-In that case ground the XIAO RST (reset) pad twice in quick succession and the board should then be in "bootloader" mode waiting for the new version of the firmware. When the XIAO is in this mode, it shows up as a storage device named Arduino on my system as can be seen below.
+In that case ground the XIAO RST (reset) pad twice in quick succession and the board should then be in "bootloader" mode waiting for the new version of the firmware. When the XIAO is in this mode, it shows up as a storage device named Arduino as can be seen below.
 
 ![https://sigmdel.ca/michel/ha/xiao/img/xiao_uf2.jpg](https://sigmdel.ca/michel/ha/xiao/img/xiao_uf2.jpg)
 
@@ -190,7 +190,7 @@ Uploading will work when the XIAO is in this mode.
 
 # Installing Display Libraries
 
-Now that our Hello World project is setup lets try to use external libraries in PlatformIO.
+Now that our Hello World project is setup lets try to use external libraries in PlatformIO. We will try to use the Arduino libraries for the SSD1306 OLED display.
 
 ## ****OLED Display SSD1306 Pin Wiring****
 
@@ -263,6 +263,7 @@ void setup(){
   display.clearDisplay();
  
   display.drawLine(0, 16, 128, 16, WHITE);
+
   // Show "Hello world!" on the display.
   display.setTextSize(1);
   display.setTextColor(WHITE);
