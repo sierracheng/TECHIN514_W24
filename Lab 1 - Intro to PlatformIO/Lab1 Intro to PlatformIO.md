@@ -7,7 +7,7 @@
 * Wider range of microcontrollers and development boards than Arduino IDE.
 * More set of tools supporting Library Management, Continuous Integration, Unit Testing, and Debugging.
 * Compatible with other VSCode extensions (e.g. GitHub Copilot).
-  * We highly suggest you install GitHub Copilot extension on VSCode first before this lab. The instruction is here in the [appendix](#appendix:-github-copilot).
+  * We highly suggest you install GitHub Copilot extension on VSCode first before this lab. The instruction is here in the [appendix](#appendix-github-copilot).
 
 ### **Lab Objectives**
 
