@@ -278,16 +278,6 @@ void loop(){
 }
 ```
 
-# Assignment
-
-1. Import the code for your wearables project into PlatformIO.
-2. Install the necessary libraries and run the code using PlatformIO
-3. Upload the code to GitHub in your own repository and share the link
-4. Submit screenshots of the following:
-   1. Build Log
-   2. Serial Monitor Output
-   3. GitHub repository screenshot
-
 # Appendix: GitHub Copilot
 
 All students in UW can have an free, educational version of GitHub Copilot subscription. You can follow the instruction [here](https://docs.github.com/en/copilot/quickstart) if you want further details.
