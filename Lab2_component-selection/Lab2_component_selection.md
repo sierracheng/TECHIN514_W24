@@ -48,8 +48,25 @@ Here's a brief instruction about how to read a datasheet, using the LM317 regula
 **For circuits with LEDs and resistors in serial, make sure you select a suitable resistor that will make the current forward (If) in a suitable range.**
 
 
+
+# ESP32 Voltage Measurement Exercise
 The second part is physical, the goal here is to be familiar with the component packages you might be using in your designs.
 
-- Assemble the board with your chosen resistor values, verify with the multimeter that you have correct output voltage or that your board is non-functional.  Connect to the analog pin of an ESP32 and read the voltage.
-- AFTER checking them with the multimeter, you are going to attach your ESP32 to the outputs and read the voltage using an analog input pin.
-- Some boards will be non-functional.  try to debug and fix it if you want.  but its OK if you read zero volts to your ESP32.
+## Instructions
+
+### Connect to ESP32 and Read Voltage
+- Connect the PCB output to an analog pin on the ESP32.
+- Program the ESP32 to read the analog value from this pin.
+- It's acceptable for some boards to be non-functional or read zero volts.
+
+### Convert ADC Values to Voltage
+- The ESP32 ADC provides values between 0 and 4095. Convert these to voltage readings.
+- Use the formula: `Voltage = (ADC_Value / 4095.0) * 3.3` to convert the ADC readings to volts.
+- Display the voltage readings in the serial monitor.
+
+## Additional Resources
+- You can refer to this blog as reference to calculate voltage from ADC [Random Nerd Tutorials - ESP32 ADC Analog Read](https://randomnerdtutorials.com/esp32-adc-analog-read-arduino-ide/).
+
+## Safety Note
+Always double-check connections and voltages with a multimeter before connecting your ESP32 to avoid potential damage.
+
