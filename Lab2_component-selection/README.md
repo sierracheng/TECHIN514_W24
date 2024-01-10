@@ -7,8 +7,8 @@ This lab has two sections:
 The first part is analytical, using the regulators schamtic.
 
 - You'll choose the necessary resistors to adjust output voltage of your regulators and a matching current-limiting resistors for your LEDs.
-  - For your regulators, set the first output voltage (VOUT1) to 3V + 0.01 * the day of the month you were born. So if you were born on the 15th, you should set the voltage to 3.15V
-  - For the second output voltage (VOUT2), add 0.1 to the first output voltage. So if you were born on the 15th, set it to 3.25V
+  - For your regulators, set the first output voltage (VOUT1) to 2V + 0.01 * the day of the month you were born. So if you were born on the 15th, you should set the voltage to 2.15V
+  - For the second output voltage (VOUT2), add 0.1 to the first output voltage. So if you were born on the 15th, set it to 2.25V
 - Geneate a BOM using KiCAD, save to a CSV, update the missing resistor values, and upload a copy of your spreadsheet with the correct resistor values.
 - Also upload a description of how you calculated your values.
 
