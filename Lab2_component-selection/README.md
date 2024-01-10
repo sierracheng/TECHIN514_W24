@@ -13,6 +13,11 @@ Follow the instruction written in[ Lab2: Component Selection.md](https://github.
 
 **Some boards will be non-functional. Try to debug and fix it if you want. But its OK if you read zero volts to your ESP32.**
 
+Some other resources:
+
+* [KiCAD installation](https://www.kicad.org/download/)
+* [Datasheets](https://github.com/GIXLabs/TECHIN514_W24/tree/main/Lab2_component-selection/datasheets)
+
 ## Lab Requirements
 
 Assembling the SOT223 package circuit (on the left) is required and should be relatively easy.
