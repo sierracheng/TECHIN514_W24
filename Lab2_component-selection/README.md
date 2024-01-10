@@ -34,5 +34,4 @@ Assembling the SC70 package (on the right) is completely optional but could be a
   - Screenshot of the exported BOM spreadsheet, with values filled in
   - A picture of your board
   - Link to github repo of your ESP32 code
-  - Screenshot of the github repo of your ESP32 code
   - Screenshot of the serial output from your ESP32 (zeros are okay if you get a non-functioning board)
