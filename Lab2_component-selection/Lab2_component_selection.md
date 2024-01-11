@@ -43,30 +43,36 @@ Here's a brief instruction about how to read a datasheet, using the LM317 regula
 3. For regulators, there will be a section of *Application and Implementation* to demonstrate how to assemble it with resistors and capacitors. Typically, there should be an equation about how the output voltage is set: **the selection of the resistors will affect the output voltage**, and this is what your calculation should aim for
    ![1704915523873](image/Lab2_component_selection/1704915523873.png)
 
-    There could be other details on the datasheet that might help your component selection. Please check them out carefully.
+   There could be other details on the datasheet that might help your component selection. Please check them out carefully.
 
 **For circuits with LEDs and resistors in serial, make sure you select a suitable resistor that will make the current forward (If) in a suitable range.**
 
-
-
 # ESP32 Voltage Measurement Exercise
+
 The second part is physical, the goal here is to be familiar with the component packages you might be using in your designs.
 
 ## Instructions
 
+Here is the PCB layout with the same device names as the schematics:
+![]()![1704936122514](image/Lab2_component_selection/1704936122514.png)![]()![]()
+
 ### Connect to ESP32 and Read Voltage
+
 - Connect the PCB output to an analog pin on the ESP32.
 - Program the ESP32 to read the analog value from this pin.
 - It's acceptable for some boards to be non-functional or read zero volts.
 
 ### Convert ADC Values to Voltage
+
 - The ESP32 ADC provides values between 0 and 4095. Convert these to voltage readings.
 - Use the formula: `Voltage = (ADC_Value / 4095.0) * 3.3` to convert the ADC readings to volts.
+  - In practice, further calibration beyone the equation above is required if you want to read the analog accurately. Try calibrating your ESP32 to read the exact voltage output if you want.
 - Display the voltage readings in the serial monitor.
 
 ## Additional Resources
+
 - You can refer to this blog as reference to calculate voltage from ADC [Random Nerd Tutorials - ESP32 ADC Analog Read](https://randomnerdtutorials.com/esp32-adc-analog-read-arduino-ide/).
 
 ## Safety Note
-Always double-check connections and voltages with a multimeter before connecting your ESP32 to avoid potential damage.
 
+Always double-check connections and voltages with a multimeter before connecting your ESP32 to avoid potential damage.
