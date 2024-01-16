@@ -76,3 +76,30 @@ Here is the PCB layout with the same device names as the schematics:
 ## Safety Note
 
 Always double-check connections and voltages with a multimeter before connecting your ESP32 to avoid potential damage.
+
+## Frequently-asked questions (FAQ)
+
+Q: What should I do if I cannot find a **resistor** in the lab that exactly matches my calculation?
+
+A: This is a typical situation, and I believe you must have encountered it during your TECHIN512 class. You can choose one resistor in the lab whose resistance is the closest to your calculation. This, of course, will affect the voltage output and produce some error, but acceptable. However, be sure that you are filling in the spreadsheet with the **IDEAL, CALCULATED** resistance but not based on your selection, otherwise it would be difficult for us to check whether your calculation is correct or not.
+
+Q: My circuit is correctly connected, but when using the multimeter to measure the voltage, I cannot get the reading. What's wrong with my board>
+A:
+
+* First, checking whether the ground (GND) pins are all connected. Using the left circuit as an example in the aboved figure, there are two pins on the PCB boards both representing the GND: the first one is the white circuit on the right of R2, and the second one is the white circuit above D1. Therefore, you shall use a wire to connect them.
+* Also, your power supply negative and multimeter negative/ESP32 GND shall be connected to those pins as well.
+* If they're still not working, probably your board is mis-printed and need detailed debugging. You can use a multimeter and switch it to the connectivity mode (with the icon of a diode) and check whether the pins/nodes shall be connected together are connected, and there's no short between other connections and wires.
+
+Q: My circiut is correctly connected, but the voltage readout is way lower than expected (e.g. below 2V). What's wrong with my setup?
+A: This is a typical phenomenon when you are powering the board with your ESP32/XIAO but not an external power supply. As illustrated in the instruction, you shall power your board with a 5V DC power supply (I bet the usage of the power supply is covered in TECHIN512). The voltage output of Seeeduino XIAO is only 3.3V. If you read the datasheet of LM317 carefully, you shall notice that there's a requirement about the minimum difference between the input and output voltage. Therefore, if the input voltage is not high enough, the output voltage cannot reach your ~2V target, regardless of your resistor selection.
+
+Q: I've checked my board with the multimetor and the output is correct, but when I'm using the XIAO board to read the analog, I cannot have the correct readings (sometimes reads zero). What should I do?
+
+A: If you check your XIAO board carefully, you shall notice that there's a tag on one side of it writing "**Seeeduino XIAO ESP32S3**". Therefore, check your PlatformIO setup and see if you've selected the correct board setup. This is **DIFFERENT** from our previous lab's choice which we set up the environment for Atmel platform based XIAO board. Here's the [link of the correct board environment setup](https://docs.platformio.org/en/latest//boards/espressif32/seeed_xiao_esp32s3.html), and you can paste it in your `platformio.ini` file to re-config it.
+
+```
+[env:seeed_xiao_esp32s3]
+platform = espressif32
+board = seeed_xiao_esp32s3
+framework = arduino
+```
