@@ -33,6 +33,9 @@ void setup(void)
   motor1.zero();
   // start moving towards the center of the range
   motor1.setPosition(STEPS/2);
+  motor1.update();
+  delay(1000);
+
 
   // initialize the wire
   Wire.begin();
@@ -88,7 +91,7 @@ void loop(void)
   motor1.setPosition(nextPos);
 
   // refreshing the display every 1000 cycles
-  if (refreshClk == 1000) {
+  if (refreshClk == 10) {
     // print the potentiometer analogh read value and the button digital read value to the OLED display
     display.clearDisplay();
     display.setCursor(0,0);
@@ -114,6 +117,7 @@ void loop(void)
     refreshClk = 0;
   }
   refreshClk++;
+  delay(2);
 
   // if ((motor1.currentStep == motor1.targetStep) && setFlag) {
   //   nextPos = 0;
