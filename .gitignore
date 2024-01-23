@@ -2,3 +2,5 @@ Lab2_component-selelction/regulator_demo/fp-info-cache
 .DS_Store
 Lab2_component-selection/regulator_demo/regulators-backups/*
 **/.vscode
+**/*.zip
+**/motor-pcb-new
