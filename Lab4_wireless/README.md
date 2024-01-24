@@ -13,41 +13,48 @@ Follow the instruction written in[ Lab4: Wireless.md](https://github.com/GIXLabs
 
 Some useful external resources:
 
-* Bluetooth on ESP32Se
-* [Datasheets](https://github.com/GIXLabs/TECHIN514_W24/tree/main/Lab2_component-selection/datasheets)
+* [Bluetooth on ESP32S3](https://wiki.seeedstudio.com/xiao_esp32s3_bluetooth)
+* [HC-SR04 Datasheet](https://www.handsontec.com/dataspecs/HC-SR04-Ultrasonic.pdf)
 
 ## Lab Requirements
 
-### BLE Scan (10 Points)
+### 4.1 BLE Scan (10 Points)
 
-- **Objective**: Identify Bluetooth devices in the vicinity.
-- **Requirement**: Submit a screenshot of your serial monitor displaying the number of Bluetooth devices detected during the scan.
+Identify Bluetooth devices in the vicinity.
 
-### Establishing Bluetooth Connection (20 Points)
+* Take screenshot of your serial monitor displaying the number of Bluetooth devices detected during the scan.
 
-- **Objective**: Establish a Bluetooth connection with your partner's ESP32.
-- **Requirement**: Attach a screenshot of the client’s serial monitor showing the successful connection. Ensure the server device’s name is circled in the screenshot.
+### 4.2 Establishing Bluetooth Connection (20 Points)
 
-### Sensor Device Signal Processing and Data Transmission (Server Device) (30 Points)
+Establish a Bluetooth connection with your partner's ESP32.
 
-- **Objective**: Collect and process distance data using the HC-SR04 sensor; transmit over Bluetooth if certain conditions are met.
+- Take a screenshot of the client’s serial monitor showing the successful connection. Ensure the server device’s name is included in the screenshot.
 
-- **Requirement**:
-  - Submit a screenshot of the serial monitor showing the distance value collected from the HC-SR04 distance sensor.
-  - Ensure data is transmitted over Bluetooth to the client device **only** when the distance is less than 30cm.
+### 4.3 Sensor Device Signal Processing and Data Transmission (Server Device, 30 Points)
 
-### Display Device Signal Processing and Data Receiving (40 Points)
+Collect and process distance data using the HC-SR04 sensor
 
-- **Objective**: Receive, process, and display distance data on the client device.
-- **Requirements**:
-  - Submit a screenshot of your serial monitor receiving the distance data from the sensor device.
-  - Submit an additional screenshot of your serial monitor after data processing. The processed data should clearly display:
-    1. The distance received from the sensor device over Bluetooth.
-    2. The maximum and minimum distance received since the beginning of data reception.
-    3. Do this for at least 10 different distance values.
+- Using a DSP algorithm (e.g. low-pass filter, moving average, etc.) )you want to use to denoise the raw data collected. Print both the raw data and denoised on the serial monitor.
+- Transmit the data over BLE **ONLY IF the denoised distance readout is less than 30cmcertain conditions**.
+- Take a screenshot of the serial monitor on your server device showing the raw and denoised distance value collected from the HC-SR04 distance sensor.
+
+### 4.4 Display Device Signal Processing and Data Receiving (Client Device, 40 Points)
+
+Receive, process, and display distance data on the client device.
+
+- Calcualte the maximum and minimum distance data received since connection to your server device. Print your **currently receiving** data, **maximum**, and **minimum** data on your serial monitor everytime you received new data.
+- Let the readout of the sensor on your server device change a bit. Make sure you've sent the data at least 10 times.
+- Take a screenshot of your client device's serial monitor, including all three data mentioned above.
 
 **Note**: Ensure that all screenshots are clear, and the required data or indicators are appropriately highlighted or circled. Follow the specific instructions for each section closely to meet the criteria for full points.
 
 ## What to be submitted on Canvas
 
-Submit a single PDF containing your Team member names nad all screenshots as specified below. Ensure the screenshots are clear and properly labeled as per the requirements.
+Submit a single PDF containing your Team member names nad all screenshots as specified below.
+
+1. Screenshot of your serial monitor displaying the **number of Bluetooth devices detected** using your MCU as BLEScanner
+2. Screenshot of the serial monitor of your clicent device to show successfull connection with your server device (make sure the server device's name is included).
+3. Screenshot of the serial monitor of your server device to show the raw and denoised sensor data.
+4. Screenshot of the serial monitor of your client device to show the currently-reading, maximum, and minimum data transmitted from your server
+
+Ensure the screenshots are clear and properly labeled as per the requirements.
