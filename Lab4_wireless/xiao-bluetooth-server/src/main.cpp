@@ -12,6 +12,9 @@ bool oldDeviceConnected = false;
 unsigned long previousMillis = 0;
 const long interval = 1000;
 
+// TODO: add new global variables for your sensor readings and processed data
+
+// TODO: Change the UUID to your own (any specific one works, but make sure they're different from others'). You can generate one here: https://www.uuidgenerator.net/
 #define SERVICE_UUID        "4fafc201-1fb5-459e-8fcc-c5c9c331914b"
 #define CHARACTERISTIC_UUID "beb5483e-36e1-4688-b7f5-ea07361b26a8"
 
@@ -25,10 +28,15 @@ class MyServerCallbacks : public BLEServerCallbacks {
     }
 };
 
+// TODO: add DSP algorithm functions here
+
 void setup() {
     Serial.begin(115200);
     Serial.println("Starting BLE work!");
 
+    // TODO: add codes for handling your sensor setup (pinMode, etc.)
+
+    // TODO: name your device to avoid conflictions
     BLEDevice::init("XIAO_ESP32S3");
     pServer = BLEDevice::createServer();
     pServer->setCallbacks(new MyServerCallbacks());
@@ -53,8 +61,14 @@ void setup() {
 }
 
 void loop() {
+    // TODO: add codes for handling your sensor readings (analogRead, etc.)
+
+    // TODO: use your defined DSP algorithm to process the readings
+
+    
     if (deviceConnected) {
         // Send new readings to database
+        // TODO: change the following code to send your own readings and processed data
         unsigned long currentMillis = millis();
         if (currentMillis - previousMillis >= interval) {
         pCharacteristic->setValue("Hello World");

@@ -7,6 +7,7 @@
 #include "BLEDevice.h"
 //#include "BLEScan.h"
 
+// TODO: change the service UUID to the one you are using on the server side.
 // The remote service we wish to connect to.
 static BLEUUID serviceUUID("4fafc201-1fb5-459e-8fcc-c5c9c331914b");
 // The characteristic of the remote service we are interested in.
@@ -18,11 +19,18 @@ static boolean doScan = false;
 static BLERemoteCharacteristic* pRemoteCharacteristic;
 static BLEAdvertisedDevice* myDevice;
 
+// TODO: define new global variables for data collection
+
+// TODO: define a new function for data aggregation
+
 static void notifyCallback(
   BLERemoteCharacteristic* pBLERemoteCharacteristic,
   uint8_t* pData,
   size_t length,
   bool isNotify) {
+    // TODO: add codes to handle the data received from the server, and call the data aggregation function to process the data
+
+    // TODO: change the following code to customize your own data format for printing
     Serial.print("Notify callback for characteristic ");
     Serial.print(pBLERemoteCharacteristic->getUUID().toString().c_str());
     Serial.print(" of data length ");
@@ -146,7 +154,7 @@ void loop() {
   // with the current time since boot.
   if (connected) {
     String newValue = "Time since boot: " + String(millis()/1000);
-    Serial.println("Setting new characteristic value to \"" + newValue + "\"");
+    Serial.println("Setting new characteristic value to \"" + newValue  + "\"");
 
     // Set the characteristic's value to be the array of bytes that is actually a string.
     pRemoteCharacteristic->writeValue(newValue.c_str(), newValue.length());
