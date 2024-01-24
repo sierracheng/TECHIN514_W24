@@ -4,7 +4,7 @@
 
 In this lab, you'll learn the basics about how to use BLE (Bluetooth Low-Energy) to connect two Seeeduino XIAO ESP32S3 microcontrollers. You can also use these techniques to connector your MCU to your mobile phone, latptops, etc.
 
-Follow the instruction written in[ Lab4: Wireless.md](https://github.com/GIXLabs/TECHIN514_W24/blob/main/Lab2_component-selection/Lab4_wireless.md) to:
+Follow the instruction written in[ Lab4: Wireless.md](https://github.com/GIXLabs/TECHIN514_W24/blob/main/Lab4_wireless/Lab4_wireless.md) to:
 
 * Use BLE libraries to scan the bluetooth devices with ESP32S3
 * Setting two MCUs as a BLE server and a BLE client, and make them connected
