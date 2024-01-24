@@ -53,9 +53,10 @@ Receive, process, and display distance data on the client device.
 
 Submit a single PDF containing your Team member names nad all screenshots as specified below.
 
-1. Screenshot of your serial monitor displaying the **number of Bluetooth devices detected** using your MCU as BLEScanner
-2. Screenshot of the serial monitor of your clicent device to show successfull connection with your server device (make sure the server device's name is included).
-3. Screenshot of the serial monitor of your server device to show the raw and denoised sensor data.
-4. Screenshot of the serial monitor of your client device to show the currently-reading, maximum, and minimum data transmitted from your server device.
+1. The link to your edited code is on GitHub. You can either create a new repo or push the updates to your existing repo for all labs (recommended).
+2. Screenshot of your serial monitor displaying the **number of Bluetooth devices detected** using your MCU as BLEScanner
+3. Screenshot of the serial monitor of your clicent device to show successfull connection with your server device (make sure the server device's name is included).
+4. Screenshot of the serial monitor of your server device to show the raw and denoised sensor data.
+5. Screenshot of the serial monitor of your client device to show the currently-reading, maximum, and minimum data transmitted from your server device.
 
 Ensure the screenshots are clear and properly labeled as per the requirements.
