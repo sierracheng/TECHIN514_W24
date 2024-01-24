@@ -15,6 +15,7 @@ Some useful external resources:
 
 * [Bluetooth on ESP32S3](https://wiki.seeedstudio.com/xiao_esp32s3_bluetooth)
 * [HC-SR04 Datasheet](https://www.handsontec.com/dataspecs/HC-SR04-Ultrasonic.pdf)
+* [Moving average (Wikipedia)](https://en.wikipedia.org/wiki/Moving_average)
 
 ## Lab Requirements
 
@@ -55,6 +56,6 @@ Submit a single PDF containing your Team member names nad all screenshots as spe
 1. Screenshot of your serial monitor displaying the **number of Bluetooth devices detected** using your MCU as BLEScanner
 2. Screenshot of the serial monitor of your clicent device to show successfull connection with your server device (make sure the server device's name is included).
 3. Screenshot of the serial monitor of your server device to show the raw and denoised sensor data.
-4. Screenshot of the serial monitor of your client device to show the currently-reading, maximum, and minimum data transmitted from your server
+4. Screenshot of the serial monitor of your client device to show the currently-reading, maximum, and minimum data transmitted from your server device.
 
 Ensure the screenshots are clear and properly labeled as per the requirements.
