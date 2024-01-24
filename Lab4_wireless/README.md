@@ -13,9 +13,9 @@ Submit a single PDF containing your Team details (team name, members). Include s
 - **Requirement**: Attach a screenshot of the client’s serial monitor showing the successful connection. Ensure the server device’s name is circled in the screenshot.
 
 ## Sensor Device Signal Processing and Data Transmission (Server Device) (30 Points)
-- **Objective**: Collect and process distance data; transmit over Bluetooth if certain conditions are met.
+- **Objective**: Collect and process distance data using the HC-SR04 sensor; transmit over Bluetooth if certain conditions are met.
 - **Requirement**:
-  - Submit a screenshot of the serial monitor showing the distance value collected from the distance sensor.
+  - Submit a screenshot of the serial monitor showing the distance value collected from the HC-SR04 distance sensor.
   - Ensure data is transmitted over Bluetooth to the client device **only** when the distance is less than 30cm.
 
 ## Display Device Signal Processing and Data Receiving (40 Points)
@@ -25,5 +25,6 @@ Submit a single PDF containing your Team details (team name, members). Include s
   - Submit an additional screenshot of your serial monitor after data processing. The processed data should clearly display:
     1. The distance received from the sensor device over Bluetooth.
     2. The maximum and minimum distance received since the beginning of data reception.
+    3. Do this for at least 10 different distance values.
 
 **Note**: Ensure that all screenshots are clear, and the required data or indicators are appropriately highlighted or circled. Follow the specific instructions for each section closely to meet the criteria for full points.
