@@ -3,15 +3,10 @@
 #include <BLEUtils.h>
 #include <BLEScan.h>
 #include <BLEAdvertisedDevice.h>
-// Client Code
-#include "BLEDevice.h"
-//#include "BLEScan.h"
 
-// TODO: change the service UUID to the one you are using on the server side.
-// The remote service we wish to connect to.
-static BLEUUID serviceUUID("4fafc201-1fb5-459e-8fcc-c5c9c331914b");
-// The characteristic of the remote service we are interested in.
-static BLEUUID    charUUID("beb5483e-36e1-4688-b7f5-ea07361b26a8");
+// The remote service and characteristic we wish to connect to.
+static BLEUUID serviceUUID("d4d8b28b-8928-4044-b3b2-fbed8f587fd0");
+static BLEUUID charUUID("c8e44563-c8f3-4822-8a41-9f4df10fa9ac");
 
 static boolean doConnect = false;
 static boolean connected = false;
@@ -19,26 +14,53 @@ static boolean doScan = false;
 static BLERemoteCharacteristic* pRemoteCharacteristic;
 static BLEAdvertisedDevice* myDevice;
 
-// TODO: define new global variables for data collection
+// Global variables for data collection
+float maxDistance = -1; // Initialize with -1 to indicate no data received yet
+float minDistance = -1; // Initialize with -1 to indicate no data received yet
 
-// TODO: define a new function for data aggregation
+// Function to update data aggregation
+void updateDataAggregation(float newData) {
+  if (maxDistance < 0 || newData > maxDistance) {
+    maxDistance = newData;
+  }
 
+  if (minDistance < 0 || newData < minDistance) {
+    minDistance = newData;
+  }
+}
+
+// Notification callback
 static void notifyCallback(
   BLERemoteCharacteristic* pBLERemoteCharacteristic,
   uint8_t* pData,
   size_t length,
   bool isNotify) {
-    // TODO: add codes to handle the data received from the server, and call the data aggregation function to process the data
 
-    // TODO: change the following code to customize your own data format for printing
-    Serial.print("Notify callback for characteristic ");
-    Serial.print(pBLERemoteCharacteristic->getUUID().toString().c_str());
-    Serial.print(" of data length ");
-    Serial.println(length);
-    Serial.print("data: ");
-    Serial.write(pData, length);
-    Serial.println();
+    // Convert the received data to a String
+    String dataStr = String((char*)pData, length);
+
+    // Find the position of the colon and space in the received string
+    int colonPos = dataStr.indexOf(": ");
+    int cmPos = dataStr.indexOf(" cm");
+
+    // Extract the substring that contains the float value
+    String valueStr = dataStr.substring(colonPos + 2, cmPos);
+
+    // Convert the extracted substring to a float
+    float newData = valueStr.toFloat();
+
+    // Update data aggregation
+    updateDataAggregation(newData);
+
+    // Print current, maximum, and minimum data
+    Serial.print("Current Data: ");
+    Serial.println(newData);
+    Serial.print("Max Data: ");
+    Serial.println(maxDistance);
+    Serial.print("Min Data: ");
+    Serial.println(minDistance);
 }
+
 
 class MyClientCallback : public BLEClientCallbacks {
   void onConnect(BLEClient* pclient) {
@@ -97,9 +119,7 @@ bool connectToServer() {
     connected = true;
     return true;
 }
-/**
- * Scan for BLE servers and find the first one that advertises the service we are looking for.
- */
+
 class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
   /**
    * Called for each advertising BLE server.
@@ -136,7 +156,6 @@ void setup() {
   pBLEScan->start(5, false);
 } // End of setup.
 
-// This is the Arduino main loop function.
 void loop() {
   // If the flag "doConnect" is true then we have scanned for and found the desired
   // BLE Server with which we wish to connect.  Now we connect to it.  Once we are
